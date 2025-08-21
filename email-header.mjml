@@ -1,0 +1,115 @@
+<mjml>
+  <mj-head>
+    <mj-font name="Space Grotesk" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" />
+    <mj-attributes>
+      <mj-all font-family="'Space Grotesk', Arial, Helvetica, sans-serif" />
+      <mj-text font-size="16px" line-height="160%" color="#111827" />
+      <mj-button font-weight="700" />
+      <mj-section padding="0" />
+      <mj-column padding="0" />
+    </mj-attributes>
+    <mj-style inline="inline">
+      .list a { color:#3B82F6; text-decoration:none; font-weight:700; }
+      .hero { background:#1D60E5; }
+      .footer { color:#6B7280; font-size:12px; }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#F6F8FB">
+    <!-- top whitespace -->
+    <mj-section background-color="#F6F8FB" padding="32px 0 0 0">
+      <mj-column>
+        <mj-spacer height="32px" />
+      </mj-column>
+    </mj-section>
+
+    <!-- HERO -->
+    <mj-section css-class="hero" padding="16px 0 16px" border-radius="12px 12px 0 0">
+      <mj-column padding="24px">
+        <mj-image
+          src="https://chisel-assets.pages.dev/logo.png"
+          alt="Chisel"
+          width="120px"
+          align="left"
+          padding="0 0 16px 0"
+        />
+        <mj-image
+          src="https://chisel-assets.pages.dev/email-header-2.png"
+          alt="Hero"
+          padding="0"
+          border-radius="12px"
+        />
+      </mj-column>
+    </mj-section>
+
+    <!-- CARD -->
+    <mj-section background-color="#FFFFFF" border-radius="12px">
+      <mj-column padding="24px">
+        <mj-text padding="0 0 8px 0">
+          Hey {{First Name (Child)}},
+        </mj-text>
+
+        <mj-text padding="0 0 16px 0">
+          We’re so glad you’re here with us on this journey. At Chisel, we don’t place children into boxes. We open doors to the talents and strengths that make them unique. To begin this journey, we’ve curated a set of simple yet powerful assessments designed to reveal your child’s unique strengths, interests, and learning styles.
+        </mj-text>
+
+        <mj-divider border-color="#D9D9D9" border-width="1px" padding="0 0 16px 0" />
+
+        <mj-text padding="0 0 8px 0" font-weight="700">
+          Here’s what’s inside:
+        </mj-text>
+
+        <mj-text css-class="list" padding="0">
+          <ol style="margin:0;padding-left:18px;">
+            <li style="margin-bottom:12px;">
+              <strong>Multiple Intelligences Test</strong> — Discover the many different ways your child can be “smart,” beyond just academics.
+              <br><a href="{{Link1}}">Click Here.</a>
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong>Personality (MBTI Framework) Test</strong> — Understand how your child approaches growth, relationships, and decision-making.
+              <br><a href="{{Link2}}">Click Here.</a>
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong>Learning Styles (VARK) Test</strong> — Identify whether your child learns best visually, aurally, through reading/writing, or kinesthetically.
+              <br><a href="{{Link3}}">Click Here.</a>
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong>Emotional Intelligence (EQ) Test</strong> — Explore how your child recognizes and manages emotions — a foundation for resilience and strong relationships.
+              <br><a href="{{Link4}}">Click Here.</a>
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong>Career Interest (RIASEC) Test</strong> — Find your child’s core career interests across six themes: Realistic, Investigative, Artistic, Social, Enterprising, and Conventional.
+              <br><a href="{{Link5}}">Click Here.</a>
+            </li>
+          </ol>
+        </mj-text>
+
+        <mj-divider border-color="#D9D9D9" border-width="1px" padding="16px 0" />
+
+        <mj-text padding="0 0 16px 0">
+          <strong>Important Reminder:</strong> After completing each test, please save the results by either printing them as a PDF or taking a screenshot.
+        </mj-text>
+
+        <mj-button
+          href="https://forms.gle/u5vm2csPRNJNhw566"
+          align="center"
+          background-color="#1D60E5"
+          color="#FFFFFF"
+          border-radius="12px"
+        >
+          Upload Your Reports
+        </mj-button>
+
+        <mj-spacer height="12px" />
+        <mj-text css-class="footer" padding="0">
+          Warmly,<br/>The Chisel Team
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- bottom whitespace -->
+    <mj-section padding="16px 0 32px">
+      <mj-column />
+    </mj-section>
+  </mj-body>
+</mjml>
