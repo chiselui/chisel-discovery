@@ -5,6 +5,7 @@ const path = require('path');
 const nunjucks = require('nunjucks');
 const Ajv = require('ajv');
 const addFormats = require('ajv-formats');
+const draft2020 = require('ajv/dist/2020');
 const puppeteer = require('puppeteer');
 
 const PORT = process.env.PORT || 4000;
@@ -19,7 +20,7 @@ nunjucks.configure(templatesPath, { autoescape: true, express: app });
 // Load schema + validator
 const schemaPath = path.join(__dirname, '..', 'schema', 'report.v0.1.json');
 const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
-const ajv = new Ajv({ allErrors: true, strict: false });
+const ajv = new draft2020.default({ allErrors: true, strict: false });
 addFormats(ajv);
 const validate = ajv.compile(schema);
 
