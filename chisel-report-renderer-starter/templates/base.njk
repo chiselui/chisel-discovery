@@ -1,0 +1,19 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ cover.title }} — {{ student.first_name }} {{ student.last_name }}</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <div class="page">
+    {% block content %}{% endblock %}
+    <div class="footer">
+      <div>{{ cover.branding.org_name or 'Chisel' }} • {{ template_id }} v{{ template_version }}</div>
+      <div>Generated: {{ generated_at or "" }}</div>
+    </div>
+  </div>
+</body>
+</html>

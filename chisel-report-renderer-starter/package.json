@@ -1,0 +1,25 @@
+{
+  "name": "chisel-report-renderer-starter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal JSON\u2192HTML\u2192PDF render service for Chisel reports (cover page v0.1).",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "render:sample:pdf": "curl -s -X POST http://localhost:4000/render/pdf -H 'Content-Type: application/json' --data-binary @examples/report.example.v0.1.json -o output/sample.pdf",
+    "render:sample:html": "curl -s -X POST http://localhost:4000/render/html -H 'Content-Type: application/json' --data-binary @examples/report.example.v0.1.json -o output/sample.html"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^2.1.1",
+    "express": "^4.19.2",
+    "nunjucks": "^3.2.4",
+    "puppeteer": "^22.6.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

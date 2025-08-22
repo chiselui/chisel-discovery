@@ -1,0 +1,29 @@
+{
+  "report_id": "rep_001",
+  "report_version": "0.1.0",
+  "template_id": "chisel-discovery-v1",
+  "template_version": "1.0.0",
+  "generated_at": "2025-08-22T09:10:00Z",
+  "student": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "grade": "7",
+    "age": 12,
+    "email_parent": "parent@example.com",
+    "location": {
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "country": "IN"
+    }
+  },
+  "cover": {
+    "title": "Chisel Discovery Findings",
+    "subtitle": "Student Summary Report",
+    "branding": {
+      "org_name": "Chisel",
+      "theme": "default"
+    }
+  },
+  "visuals": [],
+  "sections": []
+}

@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://chisel.local/schema/report.v0.1.json",
+  "title": "Chisel Report v0.1 (cover only)",
+  "type": "object",
+  "required": [
+    "report_version",
+    "template_id",
+    "template_version",
+    "student",
+    "cover"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string"
+    },
+    "report_version": {
+      "const": "0.1.0"
+    },
+    "template_id": {
+      "type": "string"
+    },
+    "template_version": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "student": {
+      "type": "object",
+      "required": [
+        "first_name",
+        "last_name",
+        "grade",
+        "email_parent"
+      ],
+      "properties": {
+        "first_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "grade": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "age": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "email_parent": {
+          "type": "string",
+          "format": "email"
+        },
+        "phone_parent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            }
+          },
+          "required": []
+        }
+      }
+    },
+    "cover": {
+      "type": "object",
+      "required": [
+        "title"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "branding": {
+          "type": "object",
+          "properties": {
+            "org_name": {
+              "type": "string"
+            },
+            "theme": {
+              "type": "string",
+              "default": "default"
+            }
+          },
+          "required": []
+        }
+      }
+    },
+    "visuals": {
+      "type": "array"
+    },
+    "sections": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

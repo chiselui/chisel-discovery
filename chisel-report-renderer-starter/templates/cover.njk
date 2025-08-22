@@ -1,0 +1,25 @@
+
+{% extends "base.njk" %}
+{% block content %}
+  <div class="cover">
+    <div class="banner">
+      {{ cover.title }}
+    </div>
+    <h1 class="h1">Student: {{ student.first_name }} {{ student.last_name }}</h1>
+    <div class="meta">
+      <div>Grade {{ student.grade }}</div>
+      {% if student.email_parent %}
+      <div class="separator"></div>
+      <div>Parent Email: {{ student.email_parent }}</div>
+      {% endif %}
+      {% if student.location and student.location.city %}
+      <div class="separator"></div>
+      <div>{{ student.location.city }}{% if student.location.state %}, {{ student.location.state }}{% endif %}{% if student.location.country %}, {{ student.location.country }}{% endif %}</div>
+      {% endif %}
+    </div>
+
+    {% if cover.subtitle %}
+      <div style="margin-top:12px; color:#374151;">{{ cover.subtitle }}</div>
+    {% endif %}
+  </div>
+{% endblock %}
