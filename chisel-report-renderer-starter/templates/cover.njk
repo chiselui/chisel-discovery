@@ -1,25 +1,36 @@
-
 {% extends "base.njk" %}
+{% set page_class = "cover-page" %}
 {% block content %}
-  <div class="cover">
-    <div class="banner">
-      {{ cover.title }}
-    </div>
-    <h1 class="h1">Student: {{ student.first_name }} {{ student.last_name }}</h1>
-    <div class="meta">
-      <div>Grade {{ student.grade }}</div>
-      {% if student.email_parent %}
-      <div class="separator"></div>
-      <div>Parent Email: {{ student.email_parent }}</div>
-      {% endif %}
-      {% if student.location and student.location.city %}
-      <div class="separator"></div>
-      <div>{{ student.location.city }}{% if student.location.state %}, {{ student.location.state }}{% endif %}{% if student.location.country %}, {{ student.location.country }}{% endif %}</div>
-      {% endif %}
+
+{% set display_date = cover.date_display or generated_at %}
+
+<div class="cover-hero">
+  <div class="cover-frame">
+    <!-- Top bar -->
+    <div class="cover-topbar">
+      <div class="tb-left">Grade {{ student.grade }}</div>
+      <div class="tb-right">{{ display_date }}</div>
     </div>
 
-    {% if cover.subtitle %}
-      <div style="margin-top:12px; color:#374151;">{{ cover.subtitle }}</div>
-    {% endif %}
+    <!-- Center: logo + title (centered both axes within hero) -->
+    <div class="cover-center">
+      <img src="/public/chisel-logo.svg" alt="Chisel logo" class="cover-logo"/>
+      <div class="cover-title">
+        {{ (cover.title or 'CHISEL\nDISCOVERY') | safe | replace('\n','<br/>') | upper }}
+      </div>
+    </div>
+
+    <!-- Name ribbon -->
+    <div class="cover-name-wrap">
+      <span class="cover-name">{{ (student.first_name ~ ' ' ~ student.last_name) | upper }}</span>
+    </div>
   </div>
+</div>
+
+<!-- Illustration block (kept on the SAME page) -->
+<div class="cover-asset">
+  <!-- Replace with your actual asset file -->
+  <img src="/public/your-illustration.png" alt="Student illustration" class="cover-asset-img"/>
+</div>
+
 {% endblock %}

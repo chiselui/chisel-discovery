@@ -68,10 +68,10 @@ app.post('/render/pdf', async (req, res, next) => {
     });
     const page = await browser.newPage();
 
-    // Serve HTML via data URL to preserve assets base path (/public)
-    // Instead, we mount a tiny server route; but since CSS is under /public, we need absolute URL.
-    // Build an absolute URL for the CSS by replacing href="/public" with http://localhost:PORT/public
-    const absHtml = html.replaceAll('href="/public', `href="http://localhost:${PORT}/public`);
+    // Convert relative paths to absolute URLs for both CSS and images
+    // This ensures Puppeteer can load all assets when rendering the PDF
+    let absHtml = html.replaceAll('href="/public', `href="http://localhost:${PORT}/public`);
+    absHtml = absHtml.replaceAll('src="/public', `src="http://localhost:${PORT}/public`);
 
     await page.setContent(absHtml, { waitUntil: 'networkidle0' });
     await page.emulateMediaType('screen');

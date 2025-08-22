@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/public/styles.css">
 </head>
 <body>
-  <div class="page">
+  <div class="page {{ page_class or '' }}">
     {% block content %}{% endblock %}
     <div class="footer">
       <div>{{ cover.branding.org_name or 'Chisel' }} • {{ template_id }} v{{ template_version }}</div>
