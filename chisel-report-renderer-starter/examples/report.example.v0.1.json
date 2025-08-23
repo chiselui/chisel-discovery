@@ -25,6 +25,46 @@
       "theme": "default"
     }
   },
+  "charts": {
+  "mi": [
+    { "name": "Verbal-Linguistic",   "percent": 81 },
+    { "name": "Logical-Mathematical", "percent": 81 },
+    { "name": "Intrapersonal",        "percent": 66 },
+    { "name": "Visual-Spatial",       "percent": 63 },
+    { "name": "Musical",              "percent": 63 },
+    { "name": "Interpersonal",        "percent": 59 },
+    { "name": "Bodily-Kinesthetic",   "percent": 56 },
+    { "name": "Naturalist",           "percent": 44 }
+  ],
+  "riasec": [
+    { "name": "Social",         "score": 21, "out_of": 30 },
+    { "name": "Enterprising",   "score": 18, "out_of": 30 },
+    { "name": "Artistic",       "score": 16, "out_of": 30 },
+    { "name": "Conventional",   "score": 15, "out_of": 30 },
+    { "name": "Investigative",  "score": 13, "out_of": 30 },
+    { "name": "Realistic",      "score": 10, "out_of": 30 }
+  ],
+  "vark": [
+    { "name": "Kinesthetic", "score": 10, "out_of": 12 },
+    { "name": "Aural",       "score": 8,  "out_of": 12 },
+    { "name": "Read/Write",  "score": 7,  "out_of": 12 },
+    { "name": "Visual",      "score": 3,  "out_of": 12 }
+  ],
+  "eq": [
+    { "name": "Other Awareness", "score": 86, "out_of": 100 },
+    { "name": "Wellbeing",       "score": 75, "out_of": 100 },
+    { "name": "Self-Awareness",  "score": 72, "out_of": 100 },
+    { "name": "Empathy",         "score": 57, "out_of": 100 },
+    { "name": "Emotional Control","score": 28, "out_of": 100 }
+  ],
+  "mbti": [
+    { "left": "Introversion", "right": "Extraversion", "left_pct": 51, "right_pct": 49 },
+    { "left": "Sensing",      "right": "Intuition",    "left_pct": 54, "right_pct": 46 },
+    { "left": "Thinking",     "right": "Feeling",      "left_pct": 53, "right_pct": 47 },
+    { "left": "Judging",      "right": "Perceiving",   "left_pct": 67, "right_pct": 33 }
+  ]
+},
+
   "visuals": [],
   "sections": []
 }

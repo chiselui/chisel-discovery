@@ -39,7 +39,7 @@ function validatePayload(payload){
 
 function renderHTML(payload){
   // For now only cover page; later you can swap to "document.njk" and include sections.
-  return nunjucks.render('cover.njk', payload);
+  return nunjucks.render('document.njk', payload);
 }
 
 // POST /render/html

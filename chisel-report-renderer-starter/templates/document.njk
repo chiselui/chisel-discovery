@@ -1,0 +1,152 @@
+{# templates/document.njk #}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ cover.title }} — {{ student.first_name }} {{ student.last_name }}</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+
+  {# ---------- PAGE 1: COVER (use your existing cover markup) ---------- #}
+  <div class="page cover-page">
+    {% set display_date = cover.date_display or generated_at %}
+    <div class="cover-hero">
+      <div class="cover-frame">
+        <div class="cover-topbar">
+          <div class="tb-left">Grade {{ student.grade }}</div>
+          <div class="tb-right">{{ display_date }}</div>
+        </div>
+
+        <div class="cover-center">
+          <img src="/public/chisel-logo.svg" alt="Chisel logo" class="cover-logo"/>
+          <div class="cover-title">
+            <span class="line1">CHISEL</span><br/>
+            <span class="line2">DISCOVERY</span>
+          </div>
+        </div>
+
+        <div class="cover-name-wrap">
+          <span class="cover-name">{{ (student.first_name ~ ' ' ~ student.last_name) | upper }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cover-asset">
+      <img src="/public/your-illustration.png" alt="Student illustration" class="cover-asset-img"/>
+    </div>
+  </div>
+
+  {# ---------- PAGE 2: CHARTS & DATA ---------- #}
+  <div class="page charts-page">
+    <div class="charts-grid">
+      <!-- Multiple Intelligences -->
+      <section class="card">
+        <header class="card-header grad-mi">
+          <div class="card-icon">🧠</div>
+          <div class="card-title">Multiple Intelligences (MI)</div>
+        </header>
+        <div class="card-body">
+          {% for item in charts.mi %}
+            <div class="bar">
+              <div class="bar-label">{{ item.name }}</div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: {{ item.percent }}%"></div>
+              </div>
+              <div class="bar-value">{{ item.percent }}%</div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- RIASEC -->
+      <section class="card">
+        <header class="card-header grad-riasec">
+          <div class="card-icon">💼</div>
+          <div class="card-title">RIASEC Career Interests</div>
+        </header>
+        <div class="card-body">
+          {% for item in charts.riasec %}
+            {% set pct = (item.score / item.out_of * 100) | round(0, 'floor') %}
+            <div class="bar">
+              <div class="bar-label">{{ item.name }}</div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: {{ pct }}%"></div>
+              </div>
+              <div class="bar-value">{{ item.score }}/{{ item.out_of }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- VARK -->
+      <section class="card">
+        <header class="card-header grad-vark">
+          <div class="card-icon">📚</div>
+          <div class="card-title">VARK Learning Styles</div>
+        </header>
+        <div class="card-body">
+          {% for item in charts.vark %}
+            {% set pct = (item.score / item.out_of * 100) | round(0, 'floor') %}
+            <div class="bar">
+              <div class="bar-label">{{ item.name }}</div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: {{ pct }}%"></div>
+              </div>
+              <div class="bar-value">{{ item.score }}/{{ item.out_of }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- EQ -->
+      <section class="card">
+        <header class="card-header grad-eq">
+          <div class="card-icon">❤️</div>
+          <div class="card-title">Emotional Intelligence (EQ)</div>
+        </header>
+        <div class="card-body">
+          {% for item in charts.eq %}
+            {% set pct = (item.score / item.out_of * 100) | round(0, 'floor') %}
+            <div class="bar">
+              <div class="bar-label">{{ item.name }}</div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: {{ pct }}%"></div>
+              </div>
+              <div class="bar-value">{{ item.score }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- MBTI -->
+      <section class="card card-span2">
+        <header class="card-header grad-mbti">
+          <div class="card-icon">🧭</div>
+          <div class="card-title">MBTI Primary Dimensions</div>
+        </header>
+        <div class="card-body">
+          {% for d in charts.mbti %}
+            <div class="mbti-row">
+              <div class="mbti-ends">
+                <span class="left">{{ d.left }}</span>
+                <span class="right">{{ d.right }}</span>
+              </div>
+              <div class="mbti-track">
+                <div class="mbti-left"  style="width: {{ d.left_pct }}%">{{ d.left_pct }}%</div>
+                <div class="mbti-right" style="width: {{ d.right_pct }}%">{{ d.right_pct }}%</div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+
+    <div class="footer">
+      <div>{{ cover.branding.org_name or 'Chisel' }} • {{ template_id }} v{{ template_version }}</div>
+      <div>Generated: {{ generated_at or "" }}</div>
+    </div>
+  </div>
+
+</body>
+</html>

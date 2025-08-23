@@ -9,13 +9,13 @@
 :root{
   --ink-900:#0b0b0c;
   --muted-600:#6b7280;
-  --brand-500:#2563eb;     /* blue */
-  --white:#ffffff;
+  --brand-500:#1D60E5;     /* blue */
+  --white:#FCFCFB;
   --line:#ffffff;
 
   /* Cover layout knobs (tweak if you ever need more/less space) */
-  --hero-min: 170mm;       /* blue hero height */
-  --asset-h: 90mm;         /* illustration block height */
+  --hero-min: 155mm;       /* blue hero height */
+  --asset-h: 75mm;         /* illustration block height */
 }
 
 *{ box-sizing:border-box; }
@@ -33,12 +33,15 @@ html, body {
 /* Hide footer on the cover so the asset fits comfortably */
 .cover-page .footer { display:none; }
 
+/* Ensure cover page stays together */
+.cover-page { page-break-after: always; }
+
 /* ===== Cover ===== */
 .cover-hero{
   background:var(--brand-500);
   color:var(--white);
   /* Touch the page edges */
-  margin:0; padding:14mm 14mm 12mm 14mm;
+  margin:0; padding:14mm 14mm 14mm 14mm;
   border-radius:0;
   min-height:var(--hero-min);
   position:relative;
@@ -48,7 +51,7 @@ html, body {
 .cover-frame{
   border:2px solid var(--line);
   padding:6mm;
-  height:100%;
+  min-height:160mm;
   display:flex; flex-direction:column;
 }
 
@@ -91,7 +94,82 @@ html, body {
 .cover-asset{
   height:var(--asset-h);
   display:flex; align-items:center; justify-content:center;
-  margin:8mm 14mm 0 14mm;   /* side margins align with hero padding */
-  break-inside: avoid; page-break-inside: avoid; page-break-after: avoid;
+  margin:6mm 14mm 0 14mm;   /* reduced top margin, side margins align with hero padding */
+  break-inside: avoid; page-break-inside: avoid; page-break-before: avoid;
 }
 .cover-asset-img{ max-width:100%; max-height:100%; display:block; }
+
+/* ----- Charts page layout ----- */
+.charts-page { padding: 16mm 14mm 18mm; }
+.charts-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10mm;
+  break-inside: avoid;
+}
+
+/* Cards */
+.card{
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  overflow:hidden;
+  break-inside: avoid;
+}
+.card-span2{ grid-column: span 2; }
+
+.card-header{
+  display:flex; align-items:center; gap:8px;
+  padding:8mm 10mm;
+  color:#fff; font-weight:800;
+  letter-spacing:.02em;
+}
+.card-header .card-title{ font-size:12pt; }
+.card-header .card-icon{ font-size:14pt; opacity:.9; }
+
+/* Gradients per section (tweak to match your palette) */
+.grad-mi     { background: linear-gradient(90deg, #b832f6, #ff3ea5); }
+.grad-riasec { background: linear-gradient(90deg, #2c92ff, #2ed3ea); }
+.grad-vark   { background: linear-gradient(90deg, #00c389, #00b0a3); }
+.grad-eq     { background: linear-gradient(90deg, #ff6a00, #ff3b3b); }
+.grad-mbti   { background: linear-gradient(90deg, #6a5cff, #d14df7); }
+
+.card-body{ padding:8mm 10mm; }
+
+/* Bars */
+.bar{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:center;
+  gap:8px;
+  margin:6px 0 10px;
+}
+.bar-label{ font-weight:600; font-size:10pt; color:#111827; }
+.bar-value{ font-weight:700; font-size:10pt; color:#111827; }
+
+.bar-track{
+  position:relative; height:8px; border-radius:6px;
+  background:#e5e7eb;
+  overflow:hidden;
+}
+.bar-fill{
+  position:absolute; left:0; top:0; bottom:0;
+  background:#111827;   /* dark ink bar */
+  border-radius:6px;
+}
+
+/* MBTI split bars */
+.mbti-row{ margin-bottom:10px; }
+.mbti-ends{ display:flex; justify-content:space-between; font-weight:700; font-size:10pt; margin-bottom:4px; }
+.mbti-track{
+  display:flex; width:100%; height:12px; overflow:hidden; border-radius:6px;
+  background:#e5e7eb;
+  font-weight:700; font-size:9pt; color:#fff;
+}
+.mbti-left{
+  background:#2c92ff; display:flex; align-items:center; justify-content:flex-start;
+  padding-left:6px;
+}
+.mbti-right{
+  background:#a855f7; display:flex; align-items:center; justify-content:flex-end;
+  padding-right:6px;
+}
