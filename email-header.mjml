@@ -50,19 +50,39 @@
         </mj-text>
 
         <mj-text padding="0 0 16px 0">
-          We’re so glad you’re here with us on this journey. At Chisel, we don’t place children into boxes. We open doors to the talents and strengths that make them unique. To begin this journey, we’ve curated a set of simple yet powerful assessments designed to reveal your child’s unique strengths, interests, and learning styles.
+          Thank you for your willingness to participate in the discovery journey. At Chisel, we believe every individual has something so unique and powerful within. Discovering the true potential, we call it masterpiece, takes effort, but it is so necessary to support the journey meaningfully.
+        </mj-text>
+        <mj-text padding="0 0 16px 0">
+          How do we discover? We have curated an objective and observation based discovery method to place your child at the centre and deep dive into their masterpiece.
+        </mj-text>
+        <mj-text padding="0 0 8px 0" font-weight="700">
+          3 Step Process
+        </mj-text>
+        <mj-text css-class="list" padding="0">
+          <ol style="margin:0;padding-left:18px;">
+            <li style="margin-bottom:12px;">
+              <strong>Objective</strong> — Your child takes the below online assessment and share the report back to us.
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong>Observation</strong> — We would have a deep listening conversation with the mother, father, and the child individually. 
+            </li>
+            <li style="margin-bottom:12px;">
+              <strong>Evidence</strong> — We would recommend you to share with us any other evidences (ie. Marks, Parent Teacher Notes, Certificates, Project of the child etc.) as you deem fit for this discovery.
+            </li>
+            
+          </ol>
         </mj-text>
 
         <mj-divider border-color="#D9D9D9" border-width="1px" padding="0 0 16px 0" />
 
         <mj-text padding="0 0 8px 0" font-weight="700">
-          Here’s what’s inside:
+          Objective Assessment by the Child:
         </mj-text>
 
         <mj-text css-class="list" padding="0">
           <ol style="margin:0;padding-left:18px;">
             <li style="margin-bottom:12px;">
-              <strong>Multiple Intelligences Test</strong> — Discover the many different ways your child can be “smart,” beyond just academics.
+              <strong>Multiple Intelligences Test</strong> — Discover the innate intelligence of your child, beyond just academics.
               <br><a href="{{Link1}}">Click Here.</a>
             </li>
             <li style="margin-bottom:12px;">
@@ -70,7 +90,7 @@
               <br><a href="{{Link2}}">Click Here.</a>
             </li>
             <li style="margin-bottom:12px;">
-              <strong>Learning Styles (VARK) Test</strong> — Identify whether your child learns best visually, aurally, through reading/writing, or kinesthetically.
+              <strong>Learning Styles (VARK) Test</strong> — Identify the learning orientation of your child whether visual, aural, read/write, or by doing.
               <br><a href="{{Link3}}">Click Here.</a>
             </li>
             <li style="margin-bottom:12px;">
@@ -78,7 +98,7 @@
               <br><a href="{{Link4}}">Click Here.</a>
             </li>
             <li style="margin-bottom:12px;">
-              <strong>Career Interest (RIASEC) Test</strong> — Find your child’s core career interests across six themes: Realistic, Investigative, Artistic, Social, Enterprising, and Conventional.
+              <strong>Career Interest (RIASEC) Test</strong> — Find your child’s core interests across six themes: Realistic, Investigative, Artistic, Social, Enterprising, and Conventional.
               <br><a href="{{Link5}}">Click Here.</a>
             </li>
           </ol>
@@ -88,6 +108,9 @@
 
         <mj-text padding="0 0 16px 0">
           <strong>Important Reminder:</strong> After completing each test, please save the results by either printing them as a PDF or taking a screenshot.
+        </mj-text>
+        <mj-text padding="0 0 16px 0">
+          <strong>Consent and Ascent:</strong> By taking the test and participating in this discovery you give your consent to us for undertaking this study. By taking the test, your child is giving us the ascent to participate in this discovery.
         </mj-text>
 
         <mj-button
